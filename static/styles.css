@@ -1,0 +1,160 @@
+/* static/styles.css */
+
+/* Tipografía moderna */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+:root {
+  /* Colores KPMG-inspired */
+  --primary:       #005587;   /* Azul oscuro de confianza */
+  --primary-dark:  #003f64;
+  --accent:        #00a3e0;   /* Azul claro como acento */
+  --bg-page:       #f4f6f8;   /* Gris muy suave de fondo */
+  --card-bg:       #ffffff;   /* Blancos puros para contraste */
+  --text:          #333333;
+  --radius:        8px;       /* Más suavidad en bordes */
+  --shadow:        0 4px 12px rgba(0,0,0,0.05);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--bg-page);
+  color: var(--text);
+  min-height: 100vh;
+}
+
+/* Header común */
+header {
+  background-color: var(--primary);
+  color: #fff;
+  padding: 1rem 2rem;
+  box-shadow: var(--shadow);
+  margin-bottom: 2rem;
+}
+header h1 {
+  font-family: 'Roboto', sans-serif; /* Cambia a la fuente deseada */
+  font-size: 2.5rem; /* Aumenta el tamaño del texto */
+  font-weight: 700; /* Aumenta el peso de la fuente para mayor impacto */
+}
+
+/* Layout central */
+.container {
+  max-width: 1000px;
+  margin: auto;
+  padding: 0 1rem;
+}
+
+/* Tarjetas */
+.card {
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  box-shadow: var(--shadow);
+  margin-bottom: 1.5rem;
+}
+
+/* Inputs y selects */
+input, select {
+  width: 100%;
+  padding: 0.6rem;
+  margin-top: 0.4rem;
+  margin-bottom: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: var(--radius);
+  font-size: 1rem;
+}
+
+/* Botones */
+button {
+  display: inline-block;
+  background-color: var(--accent);
+  color: #fff;
+  border: none;
+  padding: 0.7rem 1.2rem;
+  border-radius: var(--radius);
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+button:hover:not(:disabled) {
+  background-color: var(--primary);
+  transform: translateY(-1px);
+}
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+button#btnSearch {
+  background-color: var(--primary); /* Color de fondo inicial */
+  color: #fff; /* Color de texto inicial */
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Sombra */
+  transition: background-color 0.3s, color 0.3s; /* Transición suave */
+}
+
+button#btnSearch:hover {
+  background-color: var(--accent); /* Color de fondo al hacer hover */
+  color: #fff; /* Color de texto al hacer hover */
+}
+
+/* Tablas */
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+thead {
+  background-color: var(--primary);
+  color: #fff;
+}
+tbody tr:hover {
+  background-color: #f0f4f8;
+}
+tr:nth-child(even) {
+  background-color: #f4f6f8;
+}
+/* Sidebar en /docs */
+.layout { display: flex; gap: 1.5rem; }
+.sidebar { flex: 0 0 220px; }
+.main   { flex: 1; }
+
+/* Pequeños ajustes */
+.filter-group label,
+.card label {
+  font-weight: 500;
+}
+h2 {
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+.info-card {
+  border-radius: var(--radius); /* Bordes redondeados */
+  padding: 15px;
+  background-color: var(--card-bg);
+  box-shadow: var(--shadow);
+}
+
+
+/* Alinear operador - frase en la misma fila */
+.cond {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.cond select {
+  width: 20%;
+}
+.cond input {
+  flex: 1;
+  margin-left: 0.5rem;
+}
