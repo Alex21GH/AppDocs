@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin – Dataset</title>
+  <link rel="stylesheet" href="static/styles.css">
+</head>
+<body>
+  <header><h1>Administrar Dataset</h1></header>
+  <div class="container">
+    <div class="card">
+      <label>Seleccionar carpeta de PDFs:</label><br>
+      <input type="file" id="folderInput" webkitdirectory directory multiple>
+      <button id="btnGenerate" disabled>Generar dataset</button>
+      <div id="progressContainer" style="display:none; margin-top:0.8rem;">
+        <progress id="prg" max="100" value="0" style="width:80%;"></progress>
+        <span id="prgText">0%</span>
+      </div>
+      <span id="statusGen" style="display:block; margin-top:0.5rem;"></span>
+      <button id="btnExport" disabled>Exportar CSV</button>
+      </div>
+      <!-- Nueva sección: Carga desde CSV -->
+      <div class="card">
+        <label>Cargar dataset desde CSV:</label><br>
+        <input type="file" id="csvInput" accept=".csv">
+        <button id="btnLoadCSV" disabled>Cargar CSV</button>
+        <span id="statusLoadCSV" style="display:block; margin-top:0.5rem;"></span>
+      </div>
+      <div id="progressContainer" style="display:none; margin-top:0.8rem;">
+        <progress id="prg" max="100" value="0" style="width:80%;"></progress>
+        <span id="prgText">0%</span>
+      </div>
+  </div>
+  <script src="static/scripts.js"></script>
+</body>
+</html>
