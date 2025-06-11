@@ -321,7 +321,7 @@ class Handler(BaseHTTPRequestHandler):
 
 
 if __name__=='__main__':
-    port = int(os.environ.get("PORT", 8000))  # Azure define este puerto
+    port = int(os.environ.get("PORT", 80))  # Azure define este puerto
     srv = HTTPServer(('0.0.0.0', port), Handler)
     print(f"Servidor arrancando en http://0.0.0.0:{port}/docs")
     srv.serve_forever()
