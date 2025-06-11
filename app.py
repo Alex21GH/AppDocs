@@ -321,14 +321,8 @@ class Handler(BaseHTTPRequestHandler):
 
 
 if __name__=='__main__':
-    #ctx = ssl.SSLContext(ssl.PROTOCOL_TLS_SERVER)
-    #ctx.load_cert_chain(certfile='cert.pem', keyfile='key.pem')
+    port = int(os.environ.get("PORT", 8000))  # Azure define este puerto
+    srv = HTTPServer(('0.0.0.0', port), Handler)
+    print(f"Servidor arrancando en http://0.0.0.0:{port}/docs")
+    srv.serve_forever()
 
-    #httpd = HTTPServer(('0.0.0.0', 443), Handler)
-    #httpd.socket = ctx.wrap_socket(httpd.socket, server_side=True)
-
-    #httpd.serve_forever()
-    
-    srv = HTTPServer(('localhost',8000),Handler)
-    print("Arrancando en http://localhost:8000/docs")
-    srv.serve_forever()
